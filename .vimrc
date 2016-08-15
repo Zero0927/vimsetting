@@ -26,15 +26,8 @@ let NERDTreeShowHidden=1
 "open NERDTree automatic
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-"syntastic setting
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 "ctrlp setting
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 "setting javascript web syntax
 let g:used_javascript_libs = 'underscore,backbone'
+autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 0
